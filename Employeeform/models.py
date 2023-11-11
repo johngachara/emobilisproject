@@ -17,4 +17,4 @@ class Employee(models.Model):
     disabled = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    profile_pic = models.ImageField(upload_to=unique_img_name)
+    profile_pic = models.ImageField(null=True,upload_to=unique_img_name,default="employees/default.jpg")

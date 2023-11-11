@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import Employeeform
 from .models import Employee
 # Create your views here.
@@ -18,3 +18,7 @@ def all_employees(request):
 def employee(request,employeeid):
     employee = Employee.objects.get(pk=employeeid)
     return render(request,'employee.html',{"employee":employee})
+def delete_employee(request,employeeid):
+    employee_del = get_object_or_404(Employee,pk=employeeid)
+    employee_del.delete()
+    return redirect('allemployees')

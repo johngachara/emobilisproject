@@ -15,7 +15,7 @@
       </div>
       <div class="col-lg-6">
         <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{ employee.name | title }}</h1>
-        <p class="lead">Salary: ${{ employee.salary }}</p>
+        <p class="lead">Salary: ${{ employee.salary }} per hour</p>
           <p class="lead">Email: {{ employee.email }}</p>
           {% if employee.disabled == True %}
           <p class="lead">Disabled: Yes </p>
@@ -26,6 +26,7 @@
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
           <a href="{% url 'home' %}" type="button" class="btn btn-primary btn-lg px-4 me-md-2">Back to registration</a>
           <a href="{% url 'allemployees' %}" type="button" class="btn btn-outline-secondary btn-lg px-4">View employees</a>
+              <a href="{% url 'delete' employee.id %}" class="btn btn-danger rounded-pill px-3" type="button">Delete</a>
         </div>
       </div>
     </div>
