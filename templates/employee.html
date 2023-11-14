@@ -11,7 +11,7 @@
   <div class="container col-xxl-8 px-4 py-5">
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
       <div class="col-10 col-sm-8 col-lg-6">
-        <img src="{{ employee.profile_pic.url }}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+        <img src="{{ employee.profile_pic.url }}" class="d-block mx-lg-auto img-fluid" loading="lazy">
       </div>
       <div class="col-lg-6">
         <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{ employee.name | title }}</h1>
@@ -27,6 +27,7 @@
           <a href="{% url 'home' %}" type="button" class="btn btn-primary btn-lg px-4 me-md-2">Back to registration</a>
           <a href="{% url 'allemployees' %}" type="button" class="btn btn-outline-secondary btn-lg px-4">View employees</a>
               <a href="{% url 'delete' employee.id %}" class="btn btn-danger rounded-pill px-3" type="button">Delete</a>
+            <a href="{% url 'update' employee.id%}" class="btn btn-danger rounded-pill px-3" type="button">Update</a>
         </div>
       </div>
     </div>
